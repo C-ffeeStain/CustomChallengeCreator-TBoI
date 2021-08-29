@@ -1,68 +1,16 @@
 import sys
 
-from page_handler import pageHandler
+from PyQt5.QtWidgets import (
+    QApplication,
+    QMainWindow,
+    QPushButton,
+    QLabel,
+    QDesktopWidget,
+)
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt, QPoint
+
 from create_challenge_window import CreateNewChallengeWindow
-
-playertypes = [
-    "Isaac",
-    "Magdalene",
-    "Cain",
-    "Judas",
-    "???",
-    "Eve",
-    "Samson",
-    "Azazel",
-    "Lazarus",
-    "Eden",
-    "The Lost",
-    "Lazarus Risen",
-    "Dark Judas",
-    "Lilith",
-    "Keeper",
-    "Apollyon",
-    "The Forgotten",
-    "The Soul",
-    "Bethany",
-    "Jacob",
-    "Esau",
-    "Tainted Isaac",
-    "Tainted Magdalene",
-    "Tainted Cain",
-    "Tainted Judas",
-    "Tainted ???",
-    "Tainted Eve",
-    "Tainted Samson",
-    "Tainted Azazel",
-    "Tainted Lazarus",
-    "Tainted Eden",
-    "Tainted Lost",
-    "Tainted Lilith",
-    "Tainted Keeper",
-    "Tainted Apollyon",
-    "Tainted Forgotten",
-    "Tainted Bethany",
-    "Tainted Jacob",
-    "Dead Tainted Lazarus",
-    "Tainted Jacob 2",
-    "Tainted Soul",
-]
-
-end_bosses = {
-    "Basement 1 Boss": 1,
-    "Basement 2 Boss": 2,
-    "Caves 1 Boss": 3,
-    "Caves 2 Boss": 4,
-    "Depths 1 Boss": 5,
-    "Mom": 6,
-    "Womb 1 Boss": 7,
-    "Mom's Heart/It Lives": 8,
-    "Hush": 9,
-    "Satan": 10,
-    "The Lamb": 11,
-    "Delirium": 12,
-    "The Beast": 13,
-    "Mega Satan": 14,
-}
 
 with open("VERSION") as f:
     version = f.read().strip()
@@ -97,7 +45,7 @@ class Main(QMainWindow):
 
         self.title = QLabel("Custom Challenge Generator\n(TBoI: Repentance)", self)
         self.title.setAlignment(Qt.AlignCenter)
-        self.title.setFont(QFont("fonts/Montserrat-Bold.ttf", 12, QFont.Bold))
+        self.title.setFont(QFont("fonts/normal.ttf", 12, QFont.Bold))
         self.title.move(30, 20)
         self.title.adjustSize()
 
